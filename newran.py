@@ -131,4 +131,4 @@ async def on_message(message):
         embed.set_image(url='https://cdn.discordapp.com/attachments/712589650694504508/719929619624624188/gijikaku.png')
         await message.channel.send(embed=embed)
       
-client.run("NzE1NzM3NjI3OTgyMjk5MjE3.XtBknA.CGClHGO56KaVO2QyiV8mhb2JHok")
+client.run(os.environ['DISCORD_BOT_TOKEN'])
