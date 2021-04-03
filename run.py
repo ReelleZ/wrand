@@ -14,7 +14,7 @@ async def on_ready():
     while True:
       await client.change_presence(activity=discord.Game(name="コマンドは/hまたは📖で確認できます"))
       await asyncio.sleep(5)
-      await client.change_presence(activity=discord.Game(name="/hoまたは🏠と入力すると簡単なホームホームアシスタントが反応します"))
+      await client.change_presence(activity=discord.Game(name="/hoまたは🏠と入力すると簡単なアシスタントが反応します"))
       await asyncio.sleep(5)
 
 
@@ -39,8 +39,8 @@ def brand(message,list):
 
 def mkhelp():
   embed=discord.Embed(title="このBOTで使えるコマンドは以下の通りです。(ブキ〇〇のみ数字部分は半角全角どちらでも大丈夫ですが他のコマンドの数字は半角で入力してください。)",color=0xfd832c)
-  commandin =["\n🌟「ブキ1」または1️⃣","\n🌟「ブキ4」または4️⃣","\n🌟「(シューター1、マニューバー1、チャージャー1、スロッシャー1、フデ1、ローラー1、ブラスター1、シェルター1、スピナー1)のどれか」","\n🌟「ヒーロー1」","\n🌟「ブキ1d」または1️⃣1️⃣","\n🌟「(シューター1d、マニューバー1d、チャージャー1d、スロッシャー1d、フデ1d、ローラー1d、ブラスター1d、シェルター1d、スピナー1d)のどれか」","\n🌟「ヒーロー1d」","\n🌟/mwまたは🧢","\n🌟/hoまたは🏠"]
-  commandout =["全ブキの中から1つランダムに選びます。\n","全ブキの中から4つランダムに選びます。\nリーグマッチなどでお使いください。\nまた、1と4以外の数字でも反応します。\n","それぞれのブキ種の中から1つランダムに選びます。\n","ヒーローブキの中から1つランダムに選びます。\n","全ブキの中から1つランダムに選びます。\n結果はDMに送られます。\n","それぞれのブキ種の中から1つランダムに選びます。\n結果はDMに送られます。\n","ヒーローブキの中から1つランダムに選びます。\n結果はDMに送られます。\n","アタマ、フク、クツのギアパワーを1つずつランダムに選びます。\n","簡単なホームアシスタントを呼び出します。\n"]
+  commandin =["\n🌟「ブキ1」または1️⃣","\n🌟「ブキ4」または4️⃣","\n🌟「(シューター1、マニューバー1、チャージャー1、スロッシャー1、フデ1、ローラー1、ブラスター1、シェルター1、スピナー1)のどれか」","\n🌟「ヒーロー1」","\n🌟「ブキ1d」または1️⃣1️⃣","\n🌟「(シューター1d、マニューバー1d、チャージャー1d、スロッシャー1d、フデ1d、ローラー1d、ブラスター1d、シェルター1d、スピナー1d)のどれか」","\n🌟「ヒーロー1d」","\n🌟/mwまたは🧢","\n🌟/asまたは🏠"]
+  commandout =["全ブキの中から1つランダムに選びます。\n","全ブキの中から4つランダムに選びます。\nリーグマッチなどでお使いください。\nまた、1と4以外の数字でも反応します。\n","それぞれのブキ種の中から1つランダムに選びます。\n","ヒーローブキの中から1つランダムに選びます。\n","全ブキの中から1つランダムに選びます。\n結果はDMに送られます。\n","それぞれのブキ種の中から1つランダムに選びます。\n結果はDMに送られます。\n","ヒーローブキの中から1つランダムに選びます。\n結果はDMに送られます。\n","アタマ、フク、クツのギアパワーを1つずつランダムに選びます。\n","簡単なアシスタントを呼び出します。\n"]
   for i in range(len(commandin)):
     embed.add_field(name=commandin[i], value=commandout[i], inline=False)
   embed.add_field(name="\n🌟不具合などがあれば以下のリンクからご連絡ください。",value="[Twitter](https://twitter.com/st6Rstar2000)\n[discordサーバー](https://discord.gg/N5aqrYeHaa)")
@@ -140,9 +140,9 @@ async def on_message(message):
         embed=discord.Embed(title="",description="")
         embed.set_image(url="https://cdn.discordapp.com/attachments/712589650694504508/719929619624624188/gijikaku.png")
         await message.channel.send(embed=embed)
-      elif message.content =="/ho" or message.content == "🏠":
+      elif message.content =="/as" or message.content == "🏠":
         sv=client.get_guild(message.guild.id)
-        home=discord.Embed(title=f"こんにちは！{sv}のみなさん！",description="このメッセージについているリアクションを押すと以下のように動きます。(時間が経つと反応してくれなくなることがありますがその時はもう一度/hoまたは🏠を入力してください。)",colour=0xe52349)
+        home=discord.Embed(title=f"こんにちは！{sv}のみなさん！",description="このメッセージについているリアクションを押すと以下のように動きます。(時間が経つと反応してくれなくなることがありますがその時はもう一度/asまたは🏠を入力してください。)",colour=0xe52349)
         home.add_field(name="1⃣", value="全ブキの中から1つランダムに選びます", inline=False)
         home.add_field(name="2⃣", value="全ブキの中から1つランダムに選びます。\n結果はDMに送られます。", inline=False)
         home.add_field(name="📖", value="このbotで使用できるコマンドをすべて表示します。", inline=False)
