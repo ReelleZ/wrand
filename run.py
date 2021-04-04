@@ -165,8 +165,15 @@ async def on_message(message):
         await msg.add_reaction("1⃣")
         await msg.add_reaction("2⃣")
         await msg.add_reaction("📖")
+        
+        def check(reaction, user):
+            emoji = str(reaction.emoji)
+            if user.bot == True: 
+             pass
+            else:
+             return emoji == '1⃣' or emoji == '2⃣' or emoji == '📖' and reaction.message == msg 
         while True:
-          reaction, user = await client.wait_for("reaction_add")
+          reaction, user = await client.wait_for("reaction_add",check=check)
           if user.bot == True:  
             pass
           if reaction.message!= msg:
