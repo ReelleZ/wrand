@@ -16,7 +16,7 @@ async def on_ready():
       await asyncio.sleep(10)
       await client.change_presence(activity=discord.Game(name="/asまたは🏠と入力すると簡単なアシスタントが反応します"))
       await asyncio.sleep(10)
-    '''
+      '''
 
 def callnick(message):
   nick = message.author.nick
@@ -165,7 +165,6 @@ async def on_message(message):
         await msg.add_reaction("1⃣")
         await msg.add_reaction("2⃣")
         await msg.add_reaction("📖")
-        
         def check(reaction, user):
             emoji = str(reaction.emoji)
             if user.bot == True: 
@@ -173,7 +172,8 @@ async def on_message(message):
             else:
              return emoji == '1⃣' or emoji == '2⃣' or emoji == '📖' and reaction.message == msg 
         while True:
-          reaction, user = await client.wait_for("reaction_add",check=check)
+          reaction, user = await client.wait_for("reaction_add", check=check)
+          print(str(user)+str(client.user))
           if user.bot == True:  
             pass
           if reaction.message!= msg:
