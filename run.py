@@ -11,10 +11,13 @@ async def on_ready():
     print(client.user.name)
     print(client.user.id)
     print("------")
-    await client.change_presence(activity=discord.Game(name="コマンドは/hまたは📖で確認できます"))
-    await asyncio.sleep(10)
-    await client.change_presence(activity=discord.Game(name="/asまたは🏠と入力すると簡単なアシスタントが反応します"))
-    await asyncio.sleep(10)
+    while True:
+     await client.change_presence(activity=discord.Game(name="コマンドは/hまたは📖で確認できます"))
+     await asyncio.sleep(10)
+     await client.change_presence(activity=discord.Game(name="/asまたは🏠と入力すると簡単なアシスタントが反応します"))
+     await asyncio.sleep(10)
+        
+
 
 def callnick(message):
   nick = message.author.nick
