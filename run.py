@@ -57,7 +57,7 @@ def mkhelp():
   commandout =["全ブキの中から1つランダムに選びます。\n","全ブキの中から4つランダムに選びます。\nリーグマッチなどでお使いください。\nまた、1と4以外の数字でも反応します。\n","それぞれのブキ種の中から1つランダムに選びます。\n","ヒーローブキの中から1つランダムに選びます。\n","全ブキの中から1つランダムに選びます。\n結果はDMに送られます。\n","それぞれのブキ種の中から1つランダムに選びます。\n結果はDMに送られます。\n","ヒーローブキの中から1つランダムに選びます。\n結果はDMに送られます。\n","アタマ、フク、クツのギアパワーを1つずつランダムに選びます。\n","簡単なアシスタントを呼び出します。\n"]
   for i in range(len(commandin)):
     embed.add_field(name=commandin[i], value=commandout[i], inline=False)
-  embed.add_field(name="\n🌟不具合などがあれば以下のリンクからご連絡ください。",value="[Twitter](https://twitter.com/st6Rstar2000)\n[discordサーバー](https://discord.gg/N5aqrYeHaa)")
+  embed.add_field(name="\n🌟不具合などがあれば以下のリンクからご連絡ください。",value="[discordサーバー](https://discord.gg/N5aqrYeHaa)")
   return embed
 
 
