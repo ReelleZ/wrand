@@ -1,3 +1,7 @@
+# サーバーへの招待はこちらから
+
+https://discord.com/oauth2/authorize?client_id=718346812410298398&permissions=125952&scope=bot
+
 # 概要
 
 Nintendo Switch専用ソフト「Splatoon2」内のブキをランダムで選び、discordのボイスチャット内に送信するDiscord Botです。
