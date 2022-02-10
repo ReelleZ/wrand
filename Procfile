@@ -1,1 +1,1 @@
-Worker: python run.py
+discordbot: python run.py
