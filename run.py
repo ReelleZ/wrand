@@ -144,7 +144,7 @@ async def ssbd(
 
 @client.slash_command(description="ブキルーレットBotのコマンド一覧を表示します。")
 async def h(ctx):
-  await ctx.respond(embed=mkhelp())
+  await ctx.channel.send(embed=mkhelp())
 
 @client.slash_command(description="アタマ、フク、クツのギアパワーを1つずつランダムに選びます。")
 async def mw(ctx):
