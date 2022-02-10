@@ -25,8 +25,8 @@ async def on_ready():
      await asyncio.sleep(10)
      await client.change_presence(activity=discord.Game(name="/assまたは🏠と入力すると簡単なアシスタントが反応します"))
      await asyncio.sleep(10)
-     #await client.change_presence(activity=discord.Game(name="[重要]使えるコマンドが5月までに変わります。詳しくは[記事]()まで"))
-     #await asyncio.sleep(20)
+     await client.change_presence(activity=discord.Game(name="[重要]使えるコマンドが5月までに変わります。詳しくは/hを参照してください"))
+     await asyncio.sleep(20)
 
 def callnick(message):
   try:
@@ -66,12 +66,12 @@ def brandas(user,list):
 def mkhelp():
   embed=discord.Embed(title="このBOTで使えるコマンドは以下の通りです。",color=0xfd832c)
   embed.add_field(name="❗以下のコマンドはスラッシュコマンドで利用できます❗",value="[スラッシュコマンドとは(動画)](https://twitter.com/discord_jp/status/1377063239067037701)")
-  embed.add_field(name="スラッシュコマンドが利用できない場合、ブキルーレットBotをもう一度招待する必要があります。\n",value="[招待はこちらから](https://discord.com/api/oauth2/authorize?client_id=718346812410298398&permissions=277025442816&scope=bot%20applications.commands)", inline=False)
+  embed.add_field(name="スラッシュコマンドが利用できない場合、ブキルーレットBotをもう一度招待する必要があります。\n",value="[招待はこちらから](https://discord.com/api/oauth2/authorize?client_id=718346812410298398&permissions=277025451072&scope=bot%20applications.commands)", inline=False)
   commandin =["\n🌟ssb","\n🌟sssb","\n🌟h","\n🌟mw","\n🌟ass"]
   commandout =["指定されたブキ種類の中から指定された人数分ランダムに選びます。\n人数とブキ種類を指定しないと全ブキの中から1つランダムに選びます。\n","指定されたブキ種類の中から1つランダムに選びます。結果はDMに送られます。\n","コマンド一覧を表示します。\n","アタマ、フク、クツのギアパワーを1つずつランダムに選びます。\n","簡単なアシスタントを呼び出します。\n(DMでは呼び出せません)"]
   for i in range(len(commandin)):
     embed.add_field(name=commandin[i], value=commandout[i], inline=False)
-  embed.add_field(name="❗スラッシュコマンドは以上です❗",value=  "スラッシュコマンドを利用するにはブキルーレットBotをもう一度招待する必要があります。\n[招待はこちらから](https://discord.com/api/oauth2/authorize?client_id=718346812410298398&permissions=277025442816&scope=bot%20applications.commands)", inline=False)
+  embed.add_field(name="❗スラッシュコマンドは以上です❗",value=  "スラッシュコマンドを利用するにはブキルーレットBotをもう一度招待する必要があります。\n[招待はこちらから](https://discord.com/api/oauth2/authorize?client_id=718346812410298398&permissions=277025451072&scope=bot%20applications.commands)", inline=False)
   embed.add_field(name="❗以下のコマンドは2022年4月末まで利用できます。❗",value="(ブキ〇〇のみ数字部分は半角全角どちらでも大丈夫ですが他のコマンドの数字は半角で入力してください。", inline=False)
   commandin =["\n🌟「ブキ1」または1️⃣","\n🌟「ブキ4」または4️⃣","\n🌟「(シューター1、マニューバー1、チャージャー1、スロッシャー1、フデ1、ローラー1、ブラスター1、シェルター1、スピナー1)のどれか」","\n🌟「ヒーロー1」","\n🌟「ブキ1d」または1️⃣1️⃣","\n🌟「(シューター1d、マニューバー1d、チャージャー1d、スロッシャー1d、フデ1d、ローラー1d、ブラスター1d、シェルター1d、スピナー1d)のどれか」","\n🌟「ヒーロー1d」","\n🌟/mwまたは🧢","\n🌟/asまたは🏠"]
   commandout =["全ブキの中から1つランダムに選びます。\n","全ブキの中から4つランダムに選びます。\nリーグマッチなどでお使いください。\nまた、1と4以外の数字でも反応します。\n","それぞれのブキ種の中から1つランダムに選びます。\n","ヒーローブキの中から1つランダムに選びます。\n","全ブキの中から1つランダムに選びます。\n結果はDMに送られます。\n","それぞれのブキ種の中から1つランダムに選びます。\n結果はDMに送られます。\n","ヒーローブキの中から1つランダムに選びます。\n結果はDMに送られます。\n","アタマ、フク、クツのギアパワーを1つずつランダムに選びます。\n","簡単なアシスタントを呼び出します。\n(DMでは呼び出せません)"]
