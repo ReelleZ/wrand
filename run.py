@@ -120,7 +120,10 @@ async def ssb(
 ):
     
     if 人数==1:
-      await ctx.respond(embed=brandn(ctx,ブキ種類))
+      try:
+        await ctx.respond(embed=brandn(ctx,ブキ種類))
+      except discord.errors.NotFound as e:
+        await ctx.channel.send(embed=brandn(ctx,ブキ種類))
     else:
       list = listchoose(ブキ種類)
       ch=str(random.choice(listget(list)))
@@ -129,7 +132,10 @@ async def ssb(
         ch=str(random.choice(listget(list)))
         choice = str(choice) +"\n"+str(ch)
       embed=discord.Embed(title=f"{callnick(ctx)}さんたちのブキは",description=choice +"\n"+ "です。")
-      await ctx.respond(embed=embed)
+      try:
+        await ctx.respond(embed=embed)
+      except discord.errors.NotFound as e:
+        await ctx.channel.send(embed=embed)
 
 @client.slash_command(description="指定されたブキ種類のなかからブキを一つランダムに選び、DMに送ります。")
 async def ssbd(
@@ -140,11 +146,18 @@ async def ssbd(
     dm = await ctx.author.create_dm()
     await dm.send(embed=brandn(ctx,ブキ種類))
     sent=discord.Embed(title="DMに結果を送信しました。",color=0xffffff)
-    await ctx.respond(embed=sent)
+    try:
+      await ctx.respond(embed=sent)
+    except discord.errors.NotFound as e:
+      await ctx.channel.send(embed=sent)
 
 @client.slash_command(description="ブキルーレットBotのコマンド一覧を表示します。")
 async def h(ctx):
-  await ctx.channel.send(embed=mkhelp())
+    try:
+      await ctx.respond(embed=mkhelp())
+    except discord.errors.NotFound as e:
+      await ctx.channel.send(embed=mkhelp())
+
 
 @client.slash_command(description="アタマ、フク、クツのギアパワーを1つずつランダムに選びます。")
 async def mw(ctx):
@@ -152,7 +165,10 @@ async def mw(ctx):
         embed.add_field(name="アタマ", value=random.choice(listget("armer/atama.txt")), inline=False)
         embed.add_field(name="フク", value=random.choice(listget("armer/huku.txt")), inline=False)
         embed.add_field(name="クツ", value=random.choice(listget("armer/kutu.txt")), inline=False)
-        await ctx.respond(embed=embed)  
+        try:
+          await ctx.respond(embed=embed)
+        except discord.errors.NotFound as e:
+          await ctx.channel.send(embed=embed) 
 
 @client.slash_command(description="簡単なアシスタントを呼び出します(DMでは呼び出せません)") #,guild_ids=["791330732441731083"]
 async def ass(ctx):
@@ -208,7 +224,6 @@ async def ass(ctx):
               await msg.add_reaction("1⃣")
               await msg.add_reaction("2⃣")
               await msg.add_reaction("📖")
-
 
 #This code is invalid after April 2022. 
 @client.event
@@ -304,7 +319,7 @@ async def on_message(message):
         embed=discord.Embed(title="",description="")
         embed.set_image(url="https://cdn.discordapp.com/attachments/712589650694504508/719929619624624188/gijikaku.png")
         await message.channel.send(embed=embed)
-      elif message.content =="2as" or message.content == "🏠":
+      elif message.content =="/as" or message.content == "🏠":
         try:
           sv= f"{client.get_guild(message.guild.id)}のみなさん"
         except AttributeError as e : 
