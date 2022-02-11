@@ -188,7 +188,6 @@ async def ass(ctx):
             await ctx.respond(embed=NDM)
             return
           except discord.errors.NotFound as e:
-            await ctx.channel.send(embed=NF)
             await ctx.channel.send(embed=NDM) 
             return #DMだとリアクションが反応しないのでDMを使わないようにする
         home=discord.Embed(title=f"こんにちは！{sv}",description="このメッセージについているリアクションを押すと以下のように動きます。(時間が経つと反応してくれなくなることがありますがその時はもう一度/ass(スラッシュコマンド)を入力してください。)",colour=0xe52349)
