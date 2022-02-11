@@ -9,6 +9,8 @@ from discord.commands import Option
 client = discord.Bot()
 NFs ="アプリケーションは反応しています。上のような表示が出てしまう原因をただいま調査中です。"
 NF =discord.Embed(title=NFs,description="ご迷惑をおかけして申し訳ありません。")
+NDM=discord.Embed(title="この機能はDMでは使えません。",color=0xff0033)
+assm=discord.Embed(title="アシスタント機能を呼び出します。")
 @client.event 
 async def on_ready():
     print("ログインしました")
@@ -183,11 +185,11 @@ async def ass(ctx):
           sv= f"{client.get_guild(ctx.guild.id)}のみなさん"
         except AttributeError as e : 
           #sv=f"{callnick(message)}さん"
-          NDM=discord.Embed(title="この機能はDMでは使えません。",color=0xff0033)
           try:
             await ctx.respond(embed=NDM)
             return
           except discord.errors.NotFound as e:
+            await ctx.channel.send(embed=NF)
             await ctx.channel.send(embed=NDM) 
             return #DMだとリアクションが反応しないのでDMを使わないようにする
         home=discord.Embed(title=f"こんにちは！{sv}",description="このメッセージについているリアクションを押すと以下のように動きます。(時間が経つと反応してくれなくなることがありますがその時はもう一度/ass(スラッシュコマンド)を入力してください。)",colour=0xe52349)
@@ -195,6 +197,11 @@ async def ass(ctx):
         home.add_field(name="2⃣", value="全ブキの中から1つランダムに選びます。\n結果はDMに送られます。", inline=False)
         home.add_field(name="📖", value="このbotで使用できるコマンドをすべて表示します。", inline=False)
         home.add_field(name="注意", value="リアクションの仕様上同時押しに反応できず、\n同時にリアクションを押されてしまうと片方は無視されます。\n無視された場合は申し訳ありませんがもう一度やり直してください.", inline=False)
+        try:
+          await ctx.respond(embed=assm)
+        except discord.errors.NotFound as e:
+          await ctx.channel.send(embed=NF)
+          await ctx.channel.send(embed=assm) 
         msg = await ctx.channel.send(embed=home)
         #reaction
         await msg.add_reaction("1⃣")
