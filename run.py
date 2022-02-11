@@ -380,3 +380,5 @@ async def on_message(message):
               await msg.add_reaction("1⃣")
               await msg.add_reaction("2⃣")
               await msg.add_reaction("📖")
+            
+client.run(os.environ['DISCORD_BOT_TOKEN'])
