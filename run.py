@@ -125,7 +125,7 @@ async def ssb(
       try:
         await ctx.respond(embed=brandn(ctx,ブキ種類))
       except discord.errors.NotFound as e:
-        await ctx.channel.send(NF)
+        await ctx.channel.send(embed=NF)
         await ctx.channel.send(embed=brandn(ctx,ブキ種類))
     else:
       list = listchoose(ブキ種類)
@@ -138,7 +138,7 @@ async def ssb(
       try:
         await ctx.respond(embed=embed)
       except discord.errors.NotFound as e:
-        await ctx.channel.send(NF)
+        await ctx.channel.send(embed=NF)
         await ctx.channel.send(embed=embed)
 
 @client.slash_command(description="指定されたブキ種類のなかからブキを一つランダムに選び、DMに送ります。")
@@ -153,7 +153,7 @@ async def ssbd(
     try:
       await ctx.respond(embed=sent)
     except discord.errors.NotFound as e:
-      await ctx.channel.send(NF)
+      await ctx.channel.send(embed=NF)
       await ctx.channel.send(embed=sent)
 
 @client.slash_command(description="ブキルーレットBotのコマンド一覧を表示します。")
@@ -161,7 +161,7 @@ async def h(ctx):
     try:
       await ctx.respond(embed=mkhelp())
     except discord.errors.NotFound as e:
-      await ctx.channel.send(NF)
+      await ctx.channel.send(embed=NF)
       await ctx.channel.send(embed=mkhelp())
 
 
@@ -174,7 +174,7 @@ async def mw(ctx):
         try:
           await ctx.respond(embed=embed)
         except discord.errors.NotFound as e:
-          await ctx.channel.send(NF)
+          await ctx.channel.send(embed=NF)
           await ctx.channel.send(embed=embed) 
 
 @client.slash_command(description="簡単なアシスタントを呼び出します(DMでは呼び出せません)")
@@ -188,7 +188,7 @@ async def ass(ctx):
             await ctx.respond(embed=NDM)
             return
           except discord.errors.NotFound as e:
-            await ctx.channel.send(NF)
+            await ctx.channel.send(embed=NF)
             await ctx.channel.send(embed=NDM) 
             return #DMだとリアクションが反応しないのでDMを使わないようにする
         home=discord.Embed(title=f"こんにちは！{sv}",description="このメッセージについているリアクションを押すと以下のように動きます。(時間が経つと反応してくれなくなることがありますがその時はもう一度/ass(スラッシュコマンド)を入力してください。)",colour=0xe52349)
