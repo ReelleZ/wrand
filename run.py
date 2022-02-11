@@ -156,7 +156,6 @@ async def h(ctx):
     try:
       await ctx.respond(embed=mkhelp())
     except discord.errors.NotFound as e:
-      await ctx.delete()
       await ctx.channel.send(embed=mkhelp())
 
 
