@@ -28,8 +28,7 @@ async def on_ready():
      await asyncio.sleep(10)
      await client.change_presence(activity=discord.Game(name="/assまたは🏠と入力すると簡単なアシスタントが反応します"))
      await asyncio.sleep(10)
-     await client.change_presence(activity=discord.Game(name="[重要]使えるコマンドが5月までに変わります。詳しくは[記事](https://st6r.hatenablog.com/entry/2022/03/04/200841?_ga=2.75161298.157132834.1648037558-870594462.1644468738)まで"))
-     await asyncio.sleep(20)
+
 
 def callnick(message):
   try:
