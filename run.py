@@ -18,12 +18,6 @@ async def on_ready():
     print(client.user.id)
     print("------")
     while True:
-      #お知らせがないとき
-     #await client.change_presence(activity=discord.Game(name="コマンドは/hまたは📖で確認できます"))
-     #await asyncio.sleep(10)
-     #await client.change_presence(activity=discord.Game(name="/asまたは🏠と入力すると簡単なアシスタントが反応します"))
-     #await asyncio.sleep(10)
-     #お知らせがあるとき
      await client.change_presence(activity=discord.Game(name="コマンドは/hまたは📖で確認できます"))
      await asyncio.sleep(10)
      await client.change_presence(activity=discord.Game(name="/assまたは🏠と入力すると簡単なアシスタントが反応します"))
