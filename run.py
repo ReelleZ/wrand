@@ -25,7 +25,14 @@ async def on_ready():
 
 
 def callnick(message):
-  return message.author.name
+  try:
+    nick = message.author.nick
+    if nick is None:
+      return message.author.name
+    else:
+      return nick  
+  except AttributeError as e : 
+    return message.author.name
 
 def listget(list):
   with open(list, "r",encoding="utf-8_sig") as h: 
@@ -40,8 +47,11 @@ def brand(message,list):
 
 #/as用　変数が違う
 def callnickas(user):
-  return user.name
-  
+  nick = user.nick
+  if nick is None:
+    return user.name
+  else:
+    return nick   
 
 def brandas(user,list):
   choice =random.choice(listget(list))
