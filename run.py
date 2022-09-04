@@ -6,7 +6,9 @@ import os
 from discord.commands import Option
 
 intents = discord.Intents.default()
+intents.message_content = False
 client = discord.Bot(intents=intents)
+
 NFs ="アプリケーションは反応しています。上のような表示が出てしまう原因をただいま調査中です。"
 NF =discord.Embed(title=NFs,description="ご迷惑をおかけして申し訳ありません。")
 NDM=discord.Embed(title="この機能はDMでは使えません。",color=0xff0033)
