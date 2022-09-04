@@ -71,11 +71,6 @@ def mkhelp():
     embed.add_field(name=commandin[i], value=commandout[i], inline=False)
   embed.add_field(name="❗スラッシュコマンドは以上です❗",value=  "スラッシュコマンドを利用するにはブキルーレットBotをもう一度招待する必要があります。\n[招待はこちらから](https://discord.com/api/oauth2/authorize?client_id=718346812410298398&permissions=19327413248&scope=bot%20applications.commands)", inline=False)
   embed.add_field(name="❗スラッシュコマンドの不具合でたまにアプリケーションが応答しませんでしたと出る場合がありますが、応急処置としてそのあとにスラッシュコマンドの結果を送るようにしています。❗",value=  "不具合の原因は調査中です。ご迷惑をおかけして申し訳ありません。", inline=False)
-  embed.add_field(name="❗以下のコマンドは2022年4月末まで利用できます。❗",value="(ブキ〇〇のみ数字部分は半角全角どちらでも大丈夫ですが他のコマンドの数字は半角で入力してください。", inline=False)
-  commandin =["\n🌟「ブキ1」または1️⃣","\n🌟「ブキ4」または4️⃣","\n🌟「(シューター1、マニューバー1、チャージャー1、スロッシャー1、フデ1、ローラー1、ブラスター1、シェルター1、スピナー1)のどれか」","\n🌟「ヒーロー1」","\n🌟「ブキ1d」または1️⃣1️⃣","\n🌟「(シューター1d、マニューバー1d、チャージャー1d、スロッシャー1d、フデ1d、ローラー1d、ブラスター1d、シェルター1d、スピナー1d)のどれか」","\n🌟「ヒーロー1d」","\n🌟/mwまたは🧢","\n🌟/asまたは🏠"]
-  commandout =["全ブキの中から1つランダムに選びます。\n","全ブキの中から4つランダムに選びます。\nリーグマッチなどでお使いください。\nまた、1と4以外の数字でも反応します。\n","それぞれのブキ種の中から1つランダムに選びます。\n","ヒーローブキの中から1つランダムに選びます。\n","全ブキの中から1つランダムに選びます。\n結果はDMに送られます。\n","それぞれのブキ種の中から1つランダムに選びます。\n結果はDMに送られます。\n","ヒーローブキの中から1つランダムに選びます。\n結果はDMに送られます。\n","アタマ、フク、クツのギアパワーを1つずつランダムに選びます。\n","簡単なアシスタントを呼び出します。\n(DMでは呼び出せません)"]
-  for i in range(len(commandin)):
-    embed.add_field(name=commandin[i], value=commandout[i], inline=False)
   embed.add_field(name="\n🌟不具合などがあれば以下のリンクからご連絡ください。",value="[discordサーバー](https://discord.gg/N5aqrYeHaa)")
   return embed
 
