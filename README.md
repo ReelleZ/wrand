@@ -1,4 +1,4 @@
-# サーバーへの招待はこちらから
+# サーバーへの招待はこちらから(現在Botは休止中です)
 
 https://discord.com/oauth2/authorize?client_id=718346812410298398&permissions=125952&scope=bot
 
